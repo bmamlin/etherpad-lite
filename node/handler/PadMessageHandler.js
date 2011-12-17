@@ -780,7 +780,7 @@ function handleClientReady(client, message)
             "rev": pad.getHeadRevisionNumber(),
             "globalPadId": message.padId
         },
-        "colorPalette": ["#ffc7c7", "#fff1c7", "#e3ffc7", "#c7ffd5", "#c7ffff", "#c7d5ff", "#e3c7ff", "#ffc7f1", "#ff8f8f", "#ffe38f", "#c7ff8f", "#8fffab", "#8fffff", "#8fabff", "#c78fff", "#ff8fe3", "#d97979", "#d9c179", "#a9d979", "#79d991", "#79d9d9", "#7991d9", "#a979d9", "#d979c1", "#d9a9a9", "#d9cda9", "#c1d9a9", "#a9d9b5", "#a9d9d9", "#a9b5d9", "#c1a9d9", "#d9a9cd", "#4c9c82", "#12d1ad", "#2d8e80", "#7485c3", "#a091c7", "#3185ab", "#6818b4", "#e6e76d", "#a42c64", "#f386e5", "#4ecc0c", "#c0c236", "#693224", "#b5de6a", "#9b88fd", "#358f9b", "#496d2f", "#e267fe", "#d23056", "#1a1a64", "#5aa335", "#d722bb", "#86dc6c", "#b5a714", "#955b6a", "#9f2985", "#4b81c8", "#3d6a5b", "#434e16", "#d16084", "#af6a0e", "#8c8bd8"],
+        "colorPalette": ["#ffb3b3", "#ffbdb3", "#ffc7b3", "#ffd1b3", "#ffdbb3", "#ffe6b3", "#fff0b3", "#fffab3", "#faffb3", "#f0ffb3", "#e6ffb3", "#dbffb3", "#d1ffb3", "#c7ffb3", "#bdffb3", "#b3ffb3", "#b3ffbd", "#b3ffc7", "#b3ffd1", "#b3ffdb", "#b3ffe5", "#b3fff0", "#b3fffa", "#b3faff", "#b3f0ff", "#b3e5ff", "#b3dbff", "#b3d1ff", "#b3c7ff", "#b3bdff", "#b3b3ff", "#bdb3ff", "#c7b3ff", "#d1b3ff", "#dbb3ff", "#e6b3ff", "#f0b3ff", "#fab3ff", "#ffb3fa", "#ffb3f0"],
         "clientIp": "127.0.0.1",
         "userIsGuest": true,
         "userColor": authorColorId,

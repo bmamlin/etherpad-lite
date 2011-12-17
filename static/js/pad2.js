@@ -345,8 +345,13 @@ function handshake()
   });
 
   // Bind the colorpicker
-  var fb = $('#colorpicker').farbtastic({ callback: '#mycolorpickerpreview', width: 220});
-}
+  $('#colorpicker').brightColorPicker({
+   'brightness' : 0.3,
+   'callback' : function (color) {
+    myUserInfo.colorId = color;
+    pad.notifyChangeColor(color);
+    paduserlist.renderMyUserInfo();	
+  }});}
 
 var pad = {
   // don't access these directly from outside this file, except

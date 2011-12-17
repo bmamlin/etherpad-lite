@@ -488,19 +488,6 @@ var paduserlist = (function()
 
       // color picker
       $("#myswatchbox").click(showColorPicker);
-      $("#mycolorpicker .pickerswatchouter").click(function()
-      {
-        $("#mycolorpicker .pickerswatchouter").removeClass('picked');
-        $(this).addClass('picked');
-      });
-      $("#mycolorpickersave").click(function()
-      {
-        closeColorPicker(true);
-      });
-      $("#mycolorpickercancel").click(function()
-      {
-        closeColorPicker(false);
-      });
       //
     },
     setMyUserInfo: function(info)
@@ -730,78 +717,8 @@ var paduserlist = (function()
   return self;
 }());
 
-function getColorPickerSwatchIndex(jnode)
-{
-  //  return Number(jnode.get(0).className.match(/\bn([0-9]+)\b/)[1])-1;
-  return $("#colorpickerswatches li").index(jnode);
-}
-
-function closeColorPicker(accept)
-{
-  if (accept)
-  {    
-    var newColor = $("#mycolorpickerpreview").css("background-color");
-    var parts = newColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-    // parts now should be ["rgb(0, 70, 255", "0", "70", "255"]
-    delete (parts[0]);
-    for (var i = 1; i <= 3; ++i) {
-        parts[i] = parseInt(parts[i]).toString(16);
-        if (parts[i].length == 1) parts[i] = '0' + parts[i];
-    }
-    var newColor = "#" +parts.join(''); // "0070ff"
-    
-    myUserInfo.colorId = newColor;
-    pad.notifyChangeColor(newColor);
-    paduserlist.renderMyUserInfo();
-  }
-  else
-  {
-    //pad.notifyChangeColor(previousColorId);
-    //paduserlist.renderMyUserInfo();
-  }
-
-  colorPickerOpen = false;
-  $("#mycolorpicker").fadeOut("fast");
-}
-
 function showColorPicker()
 {
-  previousColorId = myUserInfo.colorId;
-
-  if (!colorPickerOpen)
-  {
-    var palette = pad.getColorPalette();
-
-    if (!colorPickerSetup)
-    {
-      var colorsList = $("#colorpickerswatches")
-      for (var i = 0; i < palette.length; i++)
-      {
-
-        var li = $('<li>', {
-          style: 'background: ' + palette[i] + ';'
-        });
-
-        li.appendTo(colorsList);
-
-        li.bind('click', function(event)
-        {
-          $("#colorpickerswatches li").removeClass('picked');
-          $(event.target).addClass("picked");
-
-          var newColorId = getColorPickerSwatchIndex($("#colorpickerswatches .picked"));
-          pad.notifyChangeColor(newColorId);
-        });
-
-      }
-
-      colorPickerSetup = true;
-    }
-
-    $("#mycolorpicker").fadeIn();
-    colorPickerOpen = true;
-
-    $("#colorpickerswatches li").removeClass('picked');
-    $($("#colorpickerswatches li")[myUserInfo.colorId]).addClass("picked"); //seems weird
-  }
+  $('#colorpicker').brightColorPicker('toggle');
+  return;
 }
