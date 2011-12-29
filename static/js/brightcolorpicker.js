@@ -4,7 +4,11 @@
  * Released into the public domain
  * Date: 11th Dec 2011
  * @author Burke Mamlin
- * @version 1.0
+ * @version 1.1
+ *
+ * Release notes
+ * 1.0 - initial release
+ * 1.1 - adapted UI to better fit in Etherpad Lite
  */
 
 (function($) {
@@ -103,14 +107,14 @@
 
                 var panel = $("<div class='brightColorPicker-colorPanel'></div>");
                 panel.data('brightColorPicker', { 'callback' : callback });
-                var closer = $("<a class='brightColorPicker-closeDialog' title='Close'></a>");
-                closer.click(function(event) {
-                    $(event.target).parents('.brightColorPicker-colorPanel').hide();
-                });
-                panel.append(closer);
                 var palette = $("<div class='brightColorPicker-colorPalette'></div>");
                 panel.append(palette);
                 panel.append("<div class='brightColorPicker-chosenColor'></div>");
+                var cancelButton = $("<a class='brightColorPicker-cancelButton' title='Cancel'>Cancel</a>");
+                cancelButton.click(function(event) {
+                    $(event.target).parents('.brightColorPicker-colorPanel').hide();
+                });
+                panel.append(cancelButton);
                 $this.append(panel);
 
                 var i;

@@ -6,7 +6,6 @@
     background-color: rgba(0, 0, 0, 0.699219);
     padding: 5px;
     border-radius: 6px;
-    box-shadow: 5px 5px 5px #ccc;
 }
 .brightColorPicker-colorPalette {
     width: 192px;
@@ -25,11 +24,12 @@
     border-bottom-right-radius: 3px;
 }
 .brightColorPicker-chosenColor {
-    clear: both;
+    clear: left;
     margin-top: 5px;
-    width: 192px;
+    width: 70px;
     height: 24px;
     border-radius: 3px;
+	display: inline-block;
 }
 .brightColorPicker-colorChoice {
     cursor: crosshair;
@@ -41,39 +41,22 @@
 .brightColorPicker-newLine {
     clear: both;
 }
-.brightColorPicker-colorPanel a.brightColorPicker-closeDialog {
-  display: block;
-  position: absolute;
-  top: -8.88888888888889px;
-  right: -8.88888888888889px;
-  height: 0;
-  width: 20px;
-  padding: 20px 0 0 0;
-  overflow: hidden;
-  background: #000000 none;
-  border: 2.27272727272727px solid #ffffff;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
-  -ms-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
-  color: #ffffff;
-  cursor: pointer;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-.brightColorPicker-colorPanel a.brightColorPicker-closeDialog:before {
-  content: "\D7";
-  display: block;
-  text-align: center;
-  width: 20px;
-  position: absolute;
-  top: -2px;
-  left: 0;
-  font-size: 20px;
-  line-height: 20px;
-  font-family: "Helvetica Neue", Consolas, Verdana, Tahoma, Calibri, Helvetica, Menlo, "Droid Sans", sans-serif;
+.brightColorPicker-colorPanel a.brightColorPicker-cancelButton {
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #ccc);
+	background: -ms-linear-gradient(#fff, #ccc);
+	background: -o-linear-gradient(#fff, #ccc);
+	background: -webkit-linear-gradient(#fff, #ccc);
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size:12px; 
+	cursor: pointer; 
+	color:#000; 
+	overflow: hidden; 
+	padding: 4px; 
+	text-align:center;
+	margin-top: 5px;
+	width: 60px; 
+	float: right;
+	z-index: 101;
 }
