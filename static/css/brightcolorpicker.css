@@ -14,10 +14,10 @@
 .brightColorPicker-colorPalette .brightColorPicker-colorChoice:first-child {
     border-top-left-radius: 3px;
 }
-.brightColorPicker-colorPalette .brightColorPicker-colorChoice:nth-child(8) {
+.brightColorPicker-colorPalette .brightColorPicker-colorChoice:nth-child(16) {
     border-top-right-radius: 3px;
 }
-.brightColorPicker-colorPalette .brightColorPicker-colorChoice:nth-child(33) {
+.brightColorPicker-colorPalette .brightColorPicker-colorChoice:nth-child(65) {
     border-bottom-left-radius: 3px;
 }
 .brightColorPicker-colorPalette .brightColorPicker-colorChoice:last-child {
@@ -26,7 +26,7 @@
 .brightColorPicker-chosenColor {
     clear: left;
     margin-top: 5px;
-    width: 70px;
+    width: 24px;
     height: 24px;
     border-radius: 3px;
 	display: inline-block;
@@ -35,13 +35,16 @@
     cursor: crosshair;
     font-size: 0.5em;
     height: 24px;
-    width: 24px;
+    width: 12px;
     float: left;
 }
 .brightColorPicker-newLine {
     clear: both;
 }
-.brightColorPicker-colorPanel a.brightColorPicker-cancelButton {
+a.brightColorPicker-saveButton {
+	font-weight: bold;
+}
+a.brightColorPicker-cancelButton, a.brightColorPicker-saveButton {
 	background: #fff;
 	background: -moz-linear-gradient(#fff, #ccc);
 	background: -ms-linear-gradient(#fff, #ccc);
@@ -55,7 +58,7 @@
 	overflow: hidden; 
 	padding: 4px; 
 	text-align:center;
-	margin-top: 5px;
+	margin: 5px 0px 0px 5px;
 	width: 60px; 
 	float: right;
 	z-index: 101;

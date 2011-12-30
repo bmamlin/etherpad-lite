@@ -780,7 +780,7 @@ function handleClientReady(client, message)
             "rev": pad.getHeadRevisionNumber(),
             "globalPadId": message.padId
         },
-        "colorPalette": ["#ffb3b3", "#ffbdb3", "#ffc7b3", "#ffd1b3", "#ffdbb3", "#ffe6b3", "#fff0b3", "#fffab3", "#faffb3", "#f0ffb3", "#e6ffb3", "#dbffb3", "#d1ffb3", "#c7ffb3", "#bdffb3", "#b3ffb3", "#b3ffbd", "#b3ffc7", "#b3ffd1", "#b3ffdb", "#b3ffe5", "#b3fff0", "#b3fffa", "#b3faff", "#b3f0ff", "#b3e5ff", "#b3dbff", "#b3d1ff", "#b3c7ff", "#b3bdff", "#b3b3ff", "#bdb3ff", "#c7b3ff", "#d1b3ff", "#dbb3ff", "#e6b3ff", "#f0b3ff", "#fab3ff", "#ffb3fa", "#ffb3f0"],
+        "colorPalette": ["#ffb3b3", "#ffb8b3", "#ffbeb3", "#ffc4b3", "#ffc9b3", "#ffcfb3", "#ffd5b3", "#ffdbb3", "#ffe0b3", "#ffe6b3", "#ffecb3", "#fff2b3", "#fff7b3", "#fffdb3", "#fbffb3", "#f5ffb3", "#f0ffb3", "#eaffb3", "#e4ffb3", "#deffb3", "#d9ffb3", "#d3ffb3", "#cdffb3", "#c8ffb3", "#c2ffb3", "#bcffb3", "#b6ffb3", "#b3ffb4", "#b3ffba", "#b3ffc0", "#b3ffc6", "#b3ffcb", "#b3ffd1", "#b3ffd7", "#b3ffdd", "#b3ffe2", "#b3ffe8", "#b3ffee", "#b3fff4", "#b3fff9", "#b3ffff", "#b3f9ff", "#b3f4ff", "#b3eeff", "#b3e8ff", "#b3e2ff", "#b3ddff", "#b3d7ff", "#b3d1ff", "#b3cbff", "#b3c6ff", "#b3c0ff", "#b3baff", "#b3b4ff", "#b6b3ff", "#bcb3ff", "#c2b3ff", "#c8b3ff", "#cdb3ff", "#d3b3ff", "#d9b3ff", "#deb3ff", "#e4b3ff", "#eab3ff", "#f0b3ff", "#f5b3ff", "#fbb3ff", "#ffb3fd", "#ffb3f7", "#ffb3f2", "#ffb3ec", "#ffb3e6", "#ffb3e0", "#ffb3db", "#ffb3d5", "#ffb3cf", "#ffb3c9", "#ffb3c4", "#ffb3be", "#ffb3b8"],
         "clientIp": "127.0.0.1",
         "userIsGuest": true,
         "userColor": authorColorId,
