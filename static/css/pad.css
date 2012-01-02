@@ -360,7 +360,8 @@ a#hidetopmsg { position: absolute; right: 5px; bottom: 5px; }
 
 #colorpicker {
   position: absolute;
-  left: -220px; top: 0px; z-index: 101;
+  left: -220px;
+  top: 0px;
 }
 
 #myusernameform { margin-left: 35px; }
@@ -745,30 +746,6 @@ margin-top: 10px;
 padding-left:4px;
 }
 
-ul#colorpickerswatches
-{
-  padding-left: 3px;
-  padding-top: 5px;
-}
-
-ul#colorpickerswatches li 
-{
-  border: 1px solid #ccc; 
-  width: 14px; 
-  height: 14px; 
-  overflow: hidden;
-  margin: 3px 6px;
-  padding: 0px;
-}
-
-ul#colorpickerswatches li:hover
-{
-  border: 1px solid #000; 
-  cursor: pointer;
-}
-
-
-
 #chatbox
 {
   position:absolute;
@@ -1137,10 +1114,6 @@ label[for=readonlyinput] {
   #users {
     right: none;
     left: 30px;
-  }
-  #mycolorpicker {
-    right: 0;
-    left: 0 !important;
   }
   #editorcontainer {
     margin-bottom: 33px;

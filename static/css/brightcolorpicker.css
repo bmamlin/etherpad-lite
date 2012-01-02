@@ -26,14 +26,13 @@
 .brightColorPicker-chosenColor {
     clear: left;
     margin-top: 5px;
-    width: 24px;
+    width: 70px;
     height: 24px;
     border-radius: 3px;
 	display: inline-block;
 }
 .brightColorPicker-colorChoice {
     cursor: crosshair;
-    font-size: 0.5em;
     height: 24px;
     width: 12px;
     float: left;
@@ -41,10 +40,7 @@
 .brightColorPicker-newLine {
     clear: both;
 }
-a.brightColorPicker-saveButton {
-	font-weight: bold;
-}
-a.brightColorPicker-cancelButton, a.brightColorPicker-saveButton {
+a.brightColorPicker-cancelButton {
 	background: #fff;
 	background: -moz-linear-gradient(#fff, #ccc);
 	background: -ms-linear-gradient(#fff, #ccc);
@@ -61,5 +57,4 @@ a.brightColorPicker-cancelButton, a.brightColorPicker-saveButton {
 	margin: 5px 0px 0px 5px;
 	width: 60px; 
 	float: right;
-	z-index: 101;
 }

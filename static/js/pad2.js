@@ -346,12 +346,15 @@ function handshake()
 
   // Bind the colorpicker
   $('#colorpicker').brightColorPicker({
-   'brightness' : 0.3,
-   'callback' : function (color) {
-    myUserInfo.colorId = color;
-    pad.notifyChangeColor(color);
-    paduserlist.renderMyUserInfo();	
-  }});}
+      'brightness' : 0.7,
+      'callback' : function (color)
+        {
+          myUserInfo.colorId = color;
+          pad.notifyChangeColor(color);
+          paduserlist.renderMyUserInfo();	
+        }
+  });
+}
 
 var pad = {
   // don't access these directly from outside this file, except

@@ -4,18 +4,20 @@
  * Released into the public domain
  * Date: 11th Dec 2011
  * @author Burke Mamlin
- * @version 1.1
- *
- * Release notes
- * 1.0 - initial release
- * 1.1 - adapted UI to better fit in Etherpad Lite
+ * @version 1.0
  */
 
 (function($) {
 
+    function previewColor(event, color)
+    {
+        $(event.target).parents('.brightColorPicker-colorPanel').find('.brightColorPicker-chosenColor')
+            .css('background-color', color);
+    }
+
     function updateColor(event)
     {
-        $(event.target).parent().next('.brightColorPicker-chosenColor')
+        $(event.target).parents('.brightColorPicker-colorPanel').find('.brightColorPicker-chosenColor')
             .css('background-color', $(event.target).css('background-color'));
     }
 
@@ -26,7 +28,6 @@
         target.data('brightColorPicker').callback(target.find('.brightColorPicker-chosenColor').css('background-color'));
         event.stopPropagation();
     }
-
 
     function rgbToHex(r, g, b)
     {
@@ -94,6 +95,14 @@
         return rgbToHex(Math.round(r * 255), Math.round(g * 255), Math.round(b * 255));
     };
 
+    var browserNeedsImage = function() {
+        if ($.browser.webkit && ($.browser.version == '534.13' || $.browser.version == '534.30') && navigator.userAgent.match(/android/i))
+        {
+            return true; // Some Android browsers (534.13, 534.30) have a CSS bug that 
+        }
+        return false;
+    };
+
     var methods = {
         init: function(options)
         {
@@ -103,19 +112,13 @@
                 var $this = $(this),
                     callback = (typeof options == 'function' ? options : options.callback);
 
-                var settings = $.extend({ 'brightness': 0.30 }, options);
+                var settings = $.extend({ 'brightness': 0.70 }, options);
 
                 var panel = $("<div class='brightColorPicker-colorPanel'></div>");
                 panel.data('brightColorPicker', { 'callback' : callback });
                 var palette = $("<div class='brightColorPicker-colorPalette'></div>");
                 panel.append(palette);
                 panel.append("<div class='brightColorPicker-chosenColor'></div>");
-                var saveButton = $("<a class='brightColorPicker-saveButton' title='Save'>Save</a>");
-                saveButton.click(function(event) {
-                    $(event.target).parents('.brightColorPicker-colorPanel').hide();
-                    selectColor(event);
-                });
-                panel.append(saveButton);
                 var cancelButton = $("<a class='brightColorPicker-cancelButton' title='Cancel'>Cancel</a>");
                 cancelButton.click(function(event) {
                     $(event.target).parents('.brightColorPicker-colorPanel').hide();
@@ -124,16 +127,36 @@
                 $this.append(panel);
 
                 var i;
-                for (i = 0; i < 80; i++)
+                if (browserNeedsImage())
                 {
-                    var rgb = hsvToRgb(i * 4.5, settings.brightness, 1);
-                    var div = $("<div></div>").addClass('brightColorPicker-colorChoice')
-                        .css('background-color', rgb).hover(updateColor).click(selectColor);
-                    if (i > 0 && i % 16 === 0) 
+                    // fallback to image map for buggy browsers
+                    palette.append('<img src="../../static/img/brightcolors.png" height="120" width="192" usemap="#brightColorMap" />');
+                    var map = $('<map name="brightColorMap"></map>');
+                    for (i = 0; i < 80; i++)
                     {
-                        div.addClass('newLine');
+                        var top = Math.floor(i/16)*24;
+                        var left = (i % 16)*12;
+                        var coords = left + ',' + top + ',' + (left+11) + ',' + (top+23);
+                        var rgb = hsvToRgb(i * 4.5, 1-settings.brightness, 1);
+                        (function(color) {
+	                        var area = $('<area shape="rect" coords="'+ coords +'" />').hover(function(e) {previewColor(e,color)}).click(selectColor);
+	                        map.append(area);	
+                        })(rgb);
                     }
-                    palette.append(div);
+                    palette.append(map);
+                } else
+                {
+                    for (i = 0; i < 80; i++)
+                    {
+                        var rgb = hsvToRgb(i * 4.5, 1-settings.brightness, 1);
+                        var div = $("<div></div>").addClass('brightColorPicker-colorChoice')
+                            .css('background-color', rgb).hover(updateColor).click(selectColor);
+                        if (i > 0 && i % 16 === 0) 
+                        {
+                            div.addClass('newLine');
+                        }
+                        palette.append(div);
+                    }
                 }
             });
 
